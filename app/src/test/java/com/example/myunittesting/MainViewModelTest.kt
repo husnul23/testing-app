@@ -32,7 +32,7 @@ class MainViewModelTest {
         cuboidModel = CuboidModel()
         mainViewModel = MainViewModel(cuboidModel)
         mainViewModel.save(dummyWidth, dummyLength, dummyHeight)
-        val volume = mainViewModel.getCircumference()
+        val volume = mainViewModel.circumference
         assertEquals(dummyCircumference, volume, 0.0001)
     }
 
@@ -41,7 +41,7 @@ class MainViewModelTest {
         cuboidModel = CuboidModel()
         mainViewModel = MainViewModel(cuboidModel)
         mainViewModel.save(dummyWidth, dummyLength, dummyHeight)
-        val volume = mainViewModel.getSurfaceArea()
+        val volume = mainViewModel.surfaceArea
         assertEquals(dummySurfaceArea, volume, 0.0001)
     }
 
@@ -50,32 +50,32 @@ class MainViewModelTest {
         cuboidModel = CuboidModel()
         mainViewModel = MainViewModel(cuboidModel)
         mainViewModel.save(dummyWidth, dummyLength, dummyHeight)
-        val volume = mainViewModel.getVolume()
+        val volume = mainViewModel.volume
         assertEquals(dummyVolume, volume, 0.0001)
     }
 
     @Test
     fun testMockVolume() {
-        `when`(mainViewModel.getVolume()).thenReturn(dummyVolume)
-        val volume = mainViewModel.getVolume()
-        verify(cuboidModel).getVolume()
+        `when`(mainViewModel.volume).thenReturn(dummyVolume)
+        val volume = mainViewModel.volume
+        verify(cuboidModel).volume
         assertEquals(dummyVolume, volume, 0.0001)
     }
 
 
     @Test
     fun testMockCircumference() {
-        `when`(mainViewModel.getCircumference()).thenReturn(dummyCircumference)
-        val volume = mainViewModel.getCircumference()
-        verify(cuboidModel).getCircumference()
+        `when`(mainViewModel.circumference).thenReturn(dummyCircumference)
+        val volume = mainViewModel.circumference
+        verify(cuboidModel).circumference
         assertEquals(dummyCircumference, volume, 0.0001)
     }
 
     @Test
     fun testMockSurfaceArea() {
-        `when`(mainViewModel.getSurfaceArea()).thenReturn(dummySurfaceArea)
-        val volume = mainViewModel.getSurfaceArea()
-        verify(cuboidModel).getSurfaceArea()
+        `when`(mainViewModel.surfaceArea).thenReturn(dummySurfaceArea)
+        val volume = mainViewModel.surfaceArea
+        verify(cuboidModel).surfaceArea
         assertEquals(dummySurfaceArea, volume, 0.0001)
     }
 
